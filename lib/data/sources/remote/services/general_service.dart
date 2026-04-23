@@ -7,6 +7,7 @@ import '../../../models/category_model.dart';
 import '../../../models/product_model.dart';
 import '../model_response.dart';
 import '../network/api_exception.dart';
+import '../request/create_product_request.dart';
 import '../request/get_product_request.dart';
 
 class GeneralService {
@@ -45,13 +46,13 @@ class GeneralService {
     }
   }
 
-  // Future<void> createProduct(CreateProductRequest request) async {
-  //   try {
-  //     await _dio.post(productPath, data: request.toJson());
-  //   } on ApiException {
-  //     rethrow;
-  //   }
-  // }
+  Future<void> createProduct(CreateProductRequest request) async {
+    try {
+      await _dio.post(productPath, data: request.toJson());
+    } on ApiException {
+      rethrow;
+    }
+  }
 
   // Future<void> updateProduct(int id, UpdateProductRequest request) async {
   //   try {

@@ -1,0 +1,135 @@
+{
+  "project_info": {
+    "project_number": "458379212238",
+    "firebase_url": "https://sonic-wave-music-app-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "sonic-wave-music-app",
+    "storage_bucket": "sonic-wave-music-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:458379212238:android:9e588ef7fb6ef7a114e79f",
+        "android_client_info": {
+          "package_name": "com.example.demo_list"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "458379212238-6vi6h3u5lvg3lqgvcaa7lq8837clb3n1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-WLjUbLcSUpBoSy_o7Lv8OD2D1_O8qlA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "458379212238-6vi6h3u5lvg3lqgvcaa7lq8837clb3n1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:458379212238:android:f29b1bb956f5fc8414e79f",
+        "android_client_info": {
+          "package_name": "com.example.demo_list_getx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "458379212238-6vi6h3u5lvg3lqgvcaa7lq8837clb3n1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-WLjUbLcSUpBoSy_o7Lv8OD2D1_O8qlA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "458379212238-6vi6h3u5lvg3lqgvcaa7lq8837clb3n1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:458379212238:android:f5ed236023ac091e14e79f",
+        "android_client_info": {
+          "package_name": "com.pht.cubit_login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "458379212238-6vi6h3u5lvg3lqgvcaa7lq8837clb3n1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-WLjUbLcSUpBoSy_o7Lv8OD2D1_O8qlA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "458379212238-6vi6h3u5lvg3lqgvcaa7lq8837clb3n1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:458379212238:android:de570cfa4551974514e79f",
+        "android_client_info": {
+          "package_name": "com.pht.sonic_wave_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "458379212238-o5it85h78cvhcvf5k08a5qgriaogftg7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pht.sonic_wave_project",
+            "certificate_hash": "0fe17dd0a822b96d7c36dca64666b24d516ce01c"
+          }
+        },
+        {
+          "client_id": "458379212238-6vi6h3u5lvg3lqgvcaa7lq8837clb3n1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-WLjUbLcSUpBoSy_o7Lv8OD2D1_O8qlA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "458379212238-6vi6h3u5lvg3lqgvcaa7lq8837clb3n1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

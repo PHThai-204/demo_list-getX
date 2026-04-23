@@ -62,5 +62,8 @@
   "sort_price_desc": "Giá giảm dần",
   "sort_stock_asc": "Tồn kho tăng dần",
   "sort_stock_desc": "Tồn kho giảm dần",
-  "sort_updated_newest": "Cập nhật mới nhất"
+  "sort_updated_newest": "Cập nhật mới nhất",
+  "load_categories_failed": "Không tải được danh mục",
+  "try_again": "Tải lại",
+  "choose_image_failed": "Chọn ảnh thất bại"
 }

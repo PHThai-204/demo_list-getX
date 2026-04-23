@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import '../../data/repositories_impl/auth_repository_impl.dart';
 import '../../data/repositories_impl/general_repository_impl.dart';
 import '../../domain/usecase/category/get_categories_usecase.dart';
+import '../../domain/usecase/product/create_product_usecase.dart';
 import '../../domain/usecase/product/get_products_usecase.dart';
 import '../../domain/usecase/product/remove_product_usecase.dart';
 
@@ -24,6 +25,7 @@ class AppBinding extends Bindings {
     Get.put(GetProductsUseCase(Get.find()));
     Get.put(GetCategoriesUseCase(Get.find()));
     Get.put(RemoveProductUseCase(Get.find()));
+    Get.put(CreateProductUseCase(Get.find()));
   }
 
 }
