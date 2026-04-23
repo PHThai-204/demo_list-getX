@@ -3,6 +3,8 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 
 import '../../../../core/navigation/navigation_service.dart';
 import '../../../../presentation/custom/dialog_custom.dart';
@@ -53,22 +55,16 @@ class AuthInterceptor extends InterceptorsWrapper {
     try {
       await SecureStorage.deleteAll();
 
-      final navigatorState = NavigationService.navigatorKey.currentState;
-      final context = NavigationService.navigatorKey.currentContext;
-
-      if (context != null && context.mounted) {
-        await showDialogCustom(
-          context: context,
+      Get.dialog(
+        DialogCustom(
           title: 'notification'.tr(),
           content: 'session_expired'.tr(),
           confirmText: 'login'.tr(),
           onConfirm: () {
-            navigatorState?.pushNamedAndRemoveUntil(NavigationService.login, (route) => false);
+            Get.offAllNamed(NavigationService.login);
           },
-        );
-      } else {
-        navigatorState?.pushNamedAndRemoveUntil(NavigationService.login, (route) => false);
-      }
+        ),
+      );
     } finally {
       _isHandlingUnauthorized = false;
     }

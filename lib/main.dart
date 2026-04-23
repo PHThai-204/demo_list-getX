@@ -7,6 +7,7 @@ import 'package:demo_list_getx/presentation/create_product/create_product_screen
 import 'package:demo_list_getx/presentation/screens/home/home_screen.dart';
 import 'package:demo_list_getx/presentation/screens/login/login_screen.dart';
 import 'package:demo_list_getx/presentation/screens/splash/splash_screen.dart';
+import 'package:demo_list_getx/presentation/update_product/update_product_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,7 @@ import 'package:get/get.dart';
 
 import 'core/binding/home_binding.dart';
 import 'core/binding/product_detail_binding.dart';
+import 'core/binding/update_product_binding.dart';
 import 'core/navigation/navigation_service.dart';
 
 Future<void> main() async {
@@ -42,7 +44,6 @@ class MyApp extends StatelessWidget {
     final botToastBuilder = BotToastInit();
 
     return GetMaterialApp(
-      navigatorKey: NavigationService.navigatorKey,
       title: 'App Demo',
       locale: context.locale,
       supportedLocales: context.supportedLocales,
@@ -71,6 +72,11 @@ class MyApp extends StatelessWidget {
           name: NavigationService.createProduct,
           page: () => const CreateProductScreen(),
           binding: CreateProductBinding(),
+        ),
+        GetPage(
+          name: NavigationService.updateProduct,
+          page: () => const UpdateProductScreen(),
+          binding: UpdateProductBinding(),
         ),
       ],
       builder: (context, child) {

@@ -9,6 +9,7 @@ import '../model_response.dart';
 import '../network/api_exception.dart';
 import '../request/create_product_request.dart';
 import '../request/get_product_request.dart';
+import '../request/update_product_request.dart';
 
 class GeneralService {
   final productPath = 'products';
@@ -54,13 +55,13 @@ class GeneralService {
     }
   }
 
-  // Future<void> updateProduct(int id, UpdateProductRequest request) async {
-  //   try {
-  //     await _dio.put('$productPath/$id', data: request.toJson());
-  //   } on ApiException {
-  //     rethrow;
-  //   }
-  // }
+  Future<void> updateProduct(int id, UpdateProductRequest request) async {
+    try {
+      await _dio.put('$productPath/$id', data: request.toJson());
+    } on ApiException {
+      rethrow;
+    }
+  }
 
   Future<void> removeProduct(int id) async {
     try {

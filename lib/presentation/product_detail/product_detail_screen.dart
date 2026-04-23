@@ -1,9 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:demo_list_getx/presentation/product_detail/product_detail_controller.dart';
-import 'package:easy_localization/easy_localization.dart' as easy;
 import 'package:flutter/material.dart';
-import 'package:get/get.dart' show GetView, Get, GetNavigation;
+import 'package:get/get.dart' hide Trans;
 
 import '../../core/app_utils/date_time_utils.dart';
+import '../../core/navigation/navigation_service.dart';
 import '../../core/styles/app_colors.dart';
 import '../../core/styles/app_text_styles.dart';
 import '../../domain/entities/product_entity.dart';
@@ -12,8 +13,15 @@ import '../custom/button_custom.dart';
 import '../custom/dialog_custom.dart';
 import '../custom/image_custom.dart';
 
-class ProductDetailScreen extends GetView<ProductDetailController> {
+class ProductDetailScreen extends StatefulWidget {
   const ProductDetailScreen({super.key});
+
+  @override
+  State<ProductDetailScreen> createState() => _ProductDetailScreenState();
+}
+
+class _ProductDetailScreenState extends State<ProductDetailScreen> {
+  final ProductDetailController controller = Get.find<ProductDetailController>();
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +90,14 @@ class ProductDetailScreen extends GetView<ProductDetailController> {
                   Expanded(
                     child: ButtonCustom(
                       title: 'update_product'.tr(),
-                      onPressed: () => Get.toNamed('/update-product', arguments: product),
+                      onPressed: () =>
+                          Get.toNamed(NavigationService.updateProduct, arguments: product)?.then((
+                            val,
+                          ) {
+                            if (val == true) {
+                              Get.back(result: true);
+                            }
+                          }),
                     ),
                   ),
                 ],
@@ -167,16 +182,16 @@ class ProductDetailScreen extends GetView<ProductDetailController> {
   }
 
   void _confirmDelete(BuildContext context, ProductDetailController controller) {
-    showDialogCustom(
-      context: context,
-      title: 'notification'.tr(),
-      content: 'confirm_remove_product'.tr(),
-      confirmText: 'confirm'.tr(),
-      onConfirm: () {
-        controller.deleteProduct();
-        Get.back();
-      },
-      onCancel: () => Get.back(),
+    Get.dialog(
+      DialogCustom(
+        title: 'notification'.tr(),
+        content: 'confirm_remove_product'.tr(),
+        confirmText: 'confirm'.tr(),
+        onConfirm: () {
+          controller.deleteProduct();
+        },
+        onCancel: () => Get.back(),
+      ),
     );
   }
 }

@@ -4,29 +4,6 @@ import 'package:get/get.dart';
 import '../../core/styles/app_colors.dart';
 import '../../core/styles/app_text_styles.dart';
 
-Future<void> showDialogCustom({
-  required BuildContext context,
-  required String title,
-  required String content,
-  required Function() onConfirm,
-  String? confirmText,
-  Function()? onCancel,
-}) async {
-  await showDialog(
-    context: context,
-    barrierColor: AppColors.black.withValues(alpha: 0.5),
-    barrierDismissible: false,
-    useSafeArea: true,
-    builder: (context) => DialogCustom(
-      title: title,
-      content: content,
-      onConfirm: onConfirm,
-      confirmText: confirmText,
-      onCancel: onCancel,
-    ),
-  );
-}
-
 class DialogCustom extends StatelessWidget {
   final String? title;
   final String? content;
@@ -105,8 +82,8 @@ class DialogCustom extends StatelessWidget {
               Expanded(
                 child: ElevatedButton(
                   onPressed: () {
-                    onConfirm?.call();
                     Get.back();
+                    onConfirm?.call();
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.darkOrange,

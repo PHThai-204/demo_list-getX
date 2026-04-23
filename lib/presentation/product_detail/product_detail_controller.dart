@@ -22,6 +22,7 @@ class ProductDetailController extends GetxController {
     LoadingCustom.show();
     try {
       await removeProductUseCase.execute(product.id);
+      LoadingCustom.hideLoading();
       Get.back(result: true);
     } on ApiException catch (e) {
       LoadingCustom.hideLoading();

@@ -6,6 +6,7 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 import '../../../core/navigation/navigation_service.dart';
+import '../../../core/styles/app_colors.dart';
 import '../../../data/enums/status_enum.dart';
 import 'components/filter_layout.dart';
 import 'components/product_item.dart';
@@ -48,14 +49,18 @@ class HomeScreen extends StatelessWidget {
               }
 
               return RefreshIndicator(
+                color: AppColors.darkOrange,
                 onRefresh: controller.getProduct,
                 child: ListView.separated(
                   itemCount: controller.products.length + (controller.hasMore.value ? 1 : 0),
                   separatorBuilder: (_, _) => const SizedBox(height: 8),
                   itemBuilder: (context, index) {
-                    if (index >= controller.products.length) {
+                    if (index >= controller.products.length - 3 && controller.hasMore.value) {
                       controller.loadMoreProduct();
-                      return const Center(child: CircularProgressIndicator());
+                    }
+
+                    if (index >= controller.products.length) {
+                      return const Center(child: CircularProgressIndicator(color: AppColors.darkOrange));
                     }
 
                     final product = controller.products[index];

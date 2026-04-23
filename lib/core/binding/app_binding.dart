@@ -11,14 +11,15 @@ import '../../domain/usecase/category/get_categories_usecase.dart';
 import '../../domain/usecase/product/create_product_usecase.dart';
 import '../../domain/usecase/product/get_products_usecase.dart';
 import '../../domain/usecase/product/remove_product_usecase.dart';
+import '../../domain/usecase/product/update_product_usecase.dart';
 
 class AppBinding extends Bindings {
   @override
   void dependencies() {
-     Get.put(AuthService(), permanent: true);
+    Get.put(AuthService(), permanent: true);
     Get.put(GeneralService(), permanent: true);
 
-     Get.lazyPut<AuthRepository>(() => AuthRepositoryImpl(Get.find()));
+    Get.lazyPut<AuthRepository>(() => AuthRepositoryImpl(Get.find()));
     Get.lazyPut<GeneralRepository>(() => GeneralRepositoryImpl(Get.find()));
 
     Get.lazyPut<LoginUseCase>(() => LoginUseCase(Get.find()));
@@ -26,6 +27,6 @@ class AppBinding extends Bindings {
     Get.put(GetCategoriesUseCase(Get.find()));
     Get.put(RemoveProductUseCase(Get.find()));
     Get.put(CreateProductUseCase(Get.find()));
+    Get.put(UpdateProductUseCase(Get.find()));
   }
-
 }
