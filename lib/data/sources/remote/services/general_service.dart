@@ -1,7 +1,6 @@
 import 'package:curl_logger_dio_interceptor/curl_logger_dio_interceptor.dart';
 import 'package:demo_list_getx/data/sources/remote/network/auth_interceptor.dart';
 import 'package:dio/dio.dart';
-import 'package:injectable/injectable.dart';
 
 import '../../../../core/app_utils/app_config.dart';
 import '../../../models/category_model.dart';
@@ -10,7 +9,6 @@ import '../model_response.dart';
 import '../network/api_exception.dart';
 import '../request/get_product_request.dart';
 
-@singleton
 class GeneralService {
   final productPath = 'products';
   final categoryPath = 'categories';

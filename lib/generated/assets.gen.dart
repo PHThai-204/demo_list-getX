@@ -17,6 +17,9 @@ import 'package:vector_graphics/vector_graphics.dart' as _vg;
 class $AssetsSvgsGen {
   const $AssetsSvgsGen();
 
+  /// File path: assets/svgs/ic_arrow.svg
+  SvgGenImage get icArrow => const SvgGenImage('assets/svgs/ic_arrow.svg');
+
   /// File path: assets/svgs/ic_close_circle.svg
   SvgGenImage get icCloseCircle => const SvgGenImage('assets/svgs/ic_close_circle.svg');
 
@@ -42,7 +45,7 @@ class $AssetsSvgsGen {
   SvgGenImage get icSocialLink => const SvgGenImage('assets/svgs/ic_social_link.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [icCloseCircle, icEyeClose, icEyeOpen, icHeadphone, icPicture, icSearch, icSearchNormal, icSocialLink];
+  List<SvgGenImage> get values => [icArrow, icCloseCircle, icEyeClose, icEyeOpen, icHeadphone, icPicture, icSearch, icSearchNormal, icSocialLink];
 }
 
 class $AssetsTranslationsGen {

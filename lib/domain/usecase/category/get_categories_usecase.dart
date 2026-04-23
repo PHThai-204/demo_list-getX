@@ -1,8 +1,6 @@
 import 'package:demo_list_getx/domain/entities/category_entity.dart';
 import 'package:demo_list_getx/domain/repositories/general_repository.dart';
-import 'package:injectable/injectable.dart';
 
-@injectable
 class GetCategoriesUseCase {
   final GeneralRepository _repository;
 

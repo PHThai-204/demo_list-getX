@@ -12,4 +12,14 @@ class DateTimeUtils {
       return '';
     }
   }
+
+  static String fromDateTime(DateTime? dateTime) {
+    if (dateTime == null) return '';
+    try {
+      final newFormat = DateFormat('dd/MM/yyyy');
+      return newFormat.format(dateTime);
+    } catch (_) {
+      return '';
+    }
+  }
 }

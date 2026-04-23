@@ -8,7 +8,7 @@ import '../../../../generated/assets.gen.dart';
 import '../../../custom/image_custom.dart';
 
 class ProductItem extends StatelessWidget {
-  final ProductEntity product; // Đổi từ ProductModel thành ProductEntity
+  final ProductEntity product;
   final VoidCallback onTap;
 
   const ProductItem({super.key, required this.product, required this.onTap});
@@ -56,7 +56,6 @@ class ProductItem extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                   ),
                   const SizedBox(height: 4),
-                  // Đảm bảo ProductEntity có đầy đủ các trường code, price, stock
                   Text(
                     '${'product_code'.tr()}: ${product.code}',
                     style: AppTextStyles.style.s13.w500.darkGrayColor,
@@ -73,7 +72,7 @@ class ProductItem extends StatelessWidget {
                     '${'stock'.tr()}: ${product.stock}',
                     style: AppTextStyles.style.s13.w500.darkGrayColor,
                   ),
-                  if (product.category?.name != null) ...[ // Giả sử Entity map sẵn tên category
+                  if (product.category?.name != null) ...[
                     const SizedBox(height: 2),
                     Text(
                       '${'category'.tr()}: ${product.category?.name}',

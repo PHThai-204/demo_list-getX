@@ -5,6 +5,7 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 
+import '../../../core/navigation/navigation_service.dart';
 import '../../../data/enums/status_enum.dart';
 import 'components/filter_layout.dart';
 import 'components/product_item.dart';
@@ -22,8 +23,9 @@ class HomeScreen extends StatelessWidget {
         title: Text('products'.tr()),
         actions: [
           IconButton(
-            onPressed: () => Get.toNamed('/create-product')?.then((val) =>
-            val == true ? controller.getProduct() : null),
+            onPressed: () => Get.toNamed(NavigationService.createProduct)?.then((val) {
+              if (val == true) controller.getProduct();
+            }),
             icon: const Icon(Icons.add),
           ),
         ],
@@ -49,7 +51,7 @@ class HomeScreen extends StatelessWidget {
                 onRefresh: controller.getProduct,
                 child: ListView.separated(
                   itemCount: controller.products.length + (controller.hasMore.value ? 1 : 0),
-                  separatorBuilder: (_, __) => const SizedBox(height: 8),
+                  separatorBuilder: (_, _) => const SizedBox(height: 8),
                   itemBuilder: (context, index) {
                     if (index >= controller.products.length) {
                       controller.loadMoreProduct();
@@ -59,7 +61,10 @@ class HomeScreen extends StatelessWidget {
                     final product = controller.products[index];
                     return ProductItem(
                       product: product,
-                      onTap: () => Get.toNamed('/product-detail', arguments: product),
+                      onTap: () => Get.toNamed(NavigationService.productDetail, arguments: product)
+                          ?.then((val) {
+                            if (val == true) controller.getProduct();
+                          }),
                     );
                   },
                 ),

@@ -7,4 +7,6 @@ abstract class GeneralRepository {
   Future<List<ProductEntity>> fetchProducts(GetProductRequest request);
 
   Future<List<CategoryEntity>> fetchCategories();
+
+  Future<void> removeProduct(int id);
 }

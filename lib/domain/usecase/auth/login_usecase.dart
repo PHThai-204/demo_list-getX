@@ -1,9 +1,7 @@
 import 'package:demo_list_getx/domain/repositories/auth_repository.dart';
-import 'package:injectable/injectable.dart';
 
 import '../../../data/sources/remote/request/login_request.dart';
 
-@injectable
 class LoginUseCase {
   final AuthRepository _repository;
 
