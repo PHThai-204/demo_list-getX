@@ -1,19 +1,18 @@
 import 'dart:io';
 
-import 'package:demo_list_getx/core/firebase/firebase_storage_service.dart';
 import 'package:demo_list_getx/data/sources/remote/network/api_exception.dart';
 import 'package:demo_list_getx/domain/entities/category_entity.dart';
 import 'package:demo_list_getx/domain/usecase/product/create_product_usecase.dart';
 import 'package:demo_list_getx/presentation/custom/dialog_custom.dart';
 import 'package:demo_list_getx/presentation/custom/loading_custom.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
-import 'package:easy_localization/easy_localization.dart';
 
-import '../../../data/enums/status_enum.dart';
 import '../../core/app_utils/app_validate.dart';
+import '../../data/sources/remote/firebase/firebase_storage_service.dart';
 import '../../data/sources/remote/request/create_product_request.dart';
 import '../../domain/usecase/category/get_categories_usecase.dart';
 
@@ -21,7 +20,6 @@ class CreateProductController extends GetxController {
   final CreateProductUseCase _createProductUseCase;
   final GetCategoriesUseCase _getCategoriesUseCase;
 
-  var status = StatusEnum.initial.obs;
   var showValidationErrors = false.obs;
   var submitAttempt = 0.obs;
 

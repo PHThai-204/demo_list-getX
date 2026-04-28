@@ -4,7 +4,7 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 
 import '../create_product_controller.dart';
-import 'create_product_text_input.dart';
+import '../../custom/create_product_text_input.dart';
 
 
 class CodeInput extends GetView<CreateProductController> {
@@ -16,7 +16,7 @@ class CodeInput extends GetView<CreateProductController> {
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      return CreateProductTextInput(
+      return ProductTextInput(
         label: 'product_code'.tr(),
         hint: 'enter_product_code'.tr(),
         focusNode: focusNode,

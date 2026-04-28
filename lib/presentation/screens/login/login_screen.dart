@@ -44,7 +44,7 @@ class _LoginState extends State<LoginScreen> {
                 child: AutofillGroup(
                   child: Column(
                     children: [
-                      const SizedBox(height: 100),
+                      const SizedBox(height: 20),
                       Text("login".tr(), style: AppTextStyles.style.s19.w900.blackColor),
                       const SizedBox(height: 50),
                       UsernameInput(

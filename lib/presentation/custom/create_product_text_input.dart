@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../../generated/assets.gen.dart';
-import '../../custom/text_field_custom.dart';
+import '../../generated/assets.gen.dart';
+import 'text_field_custom.dart';
 
-class CreateProductTextInput extends StatefulWidget {
+class ProductTextInput extends StatefulWidget {
   final String label;
   final String hint;
   final FocusNode? focusNode;
@@ -20,7 +20,7 @@ class CreateProductTextInput extends StatefulWidget {
   final int maxLines;
   final String? initialValue;
 
-  const CreateProductTextInput({
+  const ProductTextInput({
     super.key,
     required this.label,
     required this.hint,
@@ -39,11 +39,10 @@ class CreateProductTextInput extends StatefulWidget {
   });
 
   @override
-  State<CreateProductTextInput> createState() => _CreateProductTextInputState();
+  State<ProductTextInput> createState() => _ProductTextInputState();
 }
 
-class _CreateProductTextInputState extends State<CreateProductTextInput>
-    with SingleTickerProviderStateMixin {
+class _ProductTextInputState extends State<ProductTextInput> with SingleTickerProviderStateMixin {
   late AnimationController _animation;
   late Animation<double> _offsetAnimation;
   late int _lastSubmitAttempt;
@@ -63,7 +62,7 @@ class _CreateProductTextInputState extends State<CreateProductTextInput>
   }
 
   @override
-  void didUpdateWidget(covariant CreateProductTextInput oldWidget) {
+  void didUpdateWidget(covariant ProductTextInput oldWidget) {
     super.didUpdateWidget(oldWidget);
     final submittedAgain = widget.submitAttempt != _lastSubmitAttempt;
     if (submittedAgain && widget.showValidationErrors && widget.errorText.isNotEmpty) {

@@ -10,7 +10,7 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
-import '../../core/firebase/firebase_storage_service.dart';
+import '../../data/sources/remote/firebase/firebase_storage_service.dart';
 import '../../data/sources/remote/request/update_product_request.dart';
 import '../../domain/entities/product_entity.dart';
 import '../../domain/usecase/category/get_categories_usecase.dart';

@@ -10,7 +10,7 @@ import '../../../../core/navigation/navigation_service.dart';
 import '../../../../presentation/custom/dialog_custom.dart';
 import '../../local/secure_storage.dart';
 
-class AuthInterceptor extends InterceptorsWrapper {
+class AppInterceptor extends InterceptorsWrapper {
   static bool _isHandlingUnauthorized = false;
 
   @override
@@ -37,8 +37,6 @@ class AuthInterceptor extends InterceptorsWrapper {
 
     if (err.response?.statusCode == HttpStatus.unauthorized) {
       await _forceLogout(err);
-
-      handler.next(err);
       return;
     }
 

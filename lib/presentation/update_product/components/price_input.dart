@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 
-import '../../create_product/components/create_product_text_input.dart';
+import '../../custom/create_product_text_input.dart';
 import '../update_product_controller.dart';
 
 class PriceInput extends GetView<UpdateProductController> {
@@ -16,19 +16,19 @@ class PriceInput extends GetView<UpdateProductController> {
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => CreateProductTextInput(
+      () => ProductTextInput(
         label: 'price'.tr(),
         hint: 'enter_price'.tr(),
         focusNode: focusNode,
         textInputAction: TextInputAction.next,
-        onChanged: (value) => controller.price.value = value,
+        onChanged: (value) => controller.onPriceChanged(value),
         inputType: const TextInputType.numberWithOptions(decimal: true),
         inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d*'))],
         errorText: controller.priceError.value,
         showValidationErrors: controller.showValidationErrors.value,
         submitAttempt: controller.submitAttempt.value,
         initialValue: controller.price.value,
-        onClear: () {},
+        onClear: () => controller.onPriceChanged(''),
       ),
     );
   }

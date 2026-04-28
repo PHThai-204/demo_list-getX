@@ -26,6 +26,7 @@ class _SplashState extends State<SplashScreen> {
     if (!mounted) return;
 
     if (token == null || token.isEmpty) {
+      Get.offAllNamed(NavigationService.login);
     } else {
       Get.offAllNamed(NavigationService.home);
     }

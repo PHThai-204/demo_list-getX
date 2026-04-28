@@ -1,8 +1,5 @@
-import 'package:curl_logger_dio_interceptor/curl_logger_dio_interceptor.dart';
-import 'package:demo_list_getx/data/sources/remote/network/auth_interceptor.dart';
 import 'package:dio/dio.dart';
 
-import '../../../../core/app_utils/app_config.dart';
 import '../../../models/category_model.dart';
 import '../../../models/product_model.dart';
 import '../model_response.dart';
@@ -12,11 +9,13 @@ import '../request/get_product_request.dart';
 import '../request/update_product_request.dart';
 
 class GeneralService {
+  final Dio _dio;
+
+  GeneralService(this._dio);
+
   final productPath = 'products';
   final categoryPath = 'categories';
 
-  final Dio _dio = Dio(BaseOptions(baseUrl: AppConfig.baseUrl))
-    ..interceptors.addAll([CurlLoggerDioInterceptor(printOnSuccess: true), AuthInterceptor()]);
 
   Future<List<ProductModel>> fetchProducts(GetProductRequest request) async {
     try {

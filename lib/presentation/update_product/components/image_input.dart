@@ -60,8 +60,12 @@ class ImageInput extends GetView<UpdateProductController> {
                   return Container(
                     height: 180,
                     width: double.infinity,
-                    color: Colors.grey[300],
-                    child: const Icon(Icons.image_not_supported),
+                    color: AppColors.darkGrey,
+                    child: Assets.svgs.icPicture.svg(
+                      colorFilter: const ColorFilter.mode(AppColors.darkOrange, BlendMode.srcIn),
+                      width: 14,
+                      height: 14,
+                    ),
                   );
                 },
               ),
@@ -126,7 +130,7 @@ class ImageInput extends GetView<UpdateProductController> {
               alignment: Alignment.centerRight,
               child: Text(
                 controller.imageError.value,
-                style: const TextStyle(color: Colors.red, fontSize: 12),
+                style: AppTextStyles.style.w500.s12.redColor,
               ),
             ),
           ],
