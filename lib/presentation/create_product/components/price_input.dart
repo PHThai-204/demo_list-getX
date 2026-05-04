@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import '../create_product_controller.dart';
-import '../../custom/create_product_text_input.dart';
+import '../../custom/product_text_input.dart';
 
 class PriceInput extends GetView<CreateProductController> {
   final FocusNode? focusNode;

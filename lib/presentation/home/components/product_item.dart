@@ -5,7 +5,7 @@ import '../../../../core/styles/app_colors.dart';
 import '../../../../core/styles/app_text_styles.dart';
 import '../../../../domain/entities/product_entity.dart';
 import '../../../../generated/assets.gen.dart';
-import '../../../custom/image_custom.dart';
+import '../../custom/image_custom.dart';
 
 class ProductItem extends StatelessWidget {
   final ProductEntity product;

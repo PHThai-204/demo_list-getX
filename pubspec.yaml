@@ -19,8 +19,6 @@ dependencies:
   cryptography: ^2.9.0
   flutter_keyboard_visibility: ^6.0.0
   flutter_secure_storage: ^9.2.2
-  get_it: ^9.2.1
-  injectable: ^2.7.1+4
   dio: ^5.9.2
   curl_logger_dio_interceptor: ^1.0.1
   bot_toast: ^4.1.3

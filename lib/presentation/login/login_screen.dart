@@ -6,7 +6,7 @@ import 'package:get/get_instance/src/extension_instance.dart';
 
 import '../../../core/styles/app_colors.dart';
 import '../../../core/styles/app_text_styles.dart';
-import '../../custom/button_custom.dart';
+import '../custom/button_custom.dart';
 import 'components/password_input.dart';
 import 'components/username_input.dart';
 import 'login_controller.dart';
